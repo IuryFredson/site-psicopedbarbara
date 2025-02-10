@@ -37,7 +37,7 @@ const Website = () => {
       <section
         className="pt-32 pb-20 px-6 relative bg-cover bg-center min-h-[600px]"
         style={{
-          backgroundImage: "url('./image1.jpeg')",
+          backgroundImage: "url('/image1.jpeg')",
           backgroundPosition: "center",
         }}
       >
