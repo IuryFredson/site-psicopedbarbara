@@ -68,8 +68,6 @@ const Website = () => {
         )}
       </nav>
 
-
-      {/* Hero Section */}
       
       {/* Hero Section */}
 <style>{`
@@ -86,15 +84,36 @@ const Website = () => {
   }
 `}</style>
 
+<style>{`
+  .hero-section {
+    background-image: url('/image1.jpeg');
+    background-position: center center;
+    background-size: cover;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-section {
+      background-image: url('/image.JPG');
+    }
+  }
+
+  .hero-section h2,
+  .hero-section p {
+    color: white !important;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  }
+`}</style>
+
 <section
   className="hero-section pt-24 md:pt-32 pb-16 md:pb-20 px-4 md:px-6 relative min-h-[500px] md:min-h-[600px]"
 >
-  <div className="absolute inset-0 bg-black/50"></div>
+  <div className="absolute inset-0 bg-black/60"></div>
   <div className="container mx-auto text-center relative z-10 mt-16 md:mt-32">
-    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+    <h2 className="text-4xl md:text-5xl font-bold mb-6">
       Bárbara Medeiros
     </h2>
-    <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-8 px-4">
+    <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 px-4">
       Transformando dificuldades em oportunidades de aprendizado.
     </p>
     <a href="https://wa.me/5584996544043?text=Olá,%20vim%20do%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!" target="_blank" rel="noopener noreferrer">
