@@ -1,240 +1,378 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
-  Calendar,
   Brain,
-  Sparkles,
-  Star,
+  CheckCircle2,
+  ChevronRight,
+  ClipboardCheck,
+  GraduationCap,
+  HeartHandshake,
   Mail,
-  Phone,
-  Map,
-  BookOpen,
+  MessageCircle,
+  MapPin,
   Menu,
+  Phone,
+  Sparkles,
+  Users,
   X,
 } from "lucide-react";
+
+const whatsappUrl =
+  "https://wa.me/5584996544043?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20psicopedag%C3%B3gica.";
+
+const mapUrl =
+  "https://www.google.com/maps/search/?api=1&query=Rua%20Dr.%20Ernesto%20da%20Fonseca%20Dom%20Elizeu%20Assu%20RN%2059650-000";
+
+const navItems = [
+  { href: "#about", label: "Sobre" },
+  { href: "#services", label: "Atuação" },
+  { href: "#process", label: "Processo" },
+  { href: "#contact", label: "Contato" },
+];
+
+const highlights = [
+  "Atendimento para crianças, adolescentes, adultos e idosos",
+  "Avaliação individualizada para dificuldades de aprendizagem",
+  "Orientação clara para família, escola ou pessoa atendida",
+];
+
+const signs = [
+  "Dificuldade persistente em leitura, escrita ou matemática",
+  "Desatenção, baixa organização ou queda no rendimento escolar",
+  "Suspeita de TDAH, dislexia ou outros transtornos de aprendizagem",
+  "Dúvidas sobre escolha profissional ou necessidade de teste vocacional",
+];
+
+const services = [
+  {
+    icon: Brain,
+    title: "Avaliação Psicopedagógica",
+    description:
+      "Investigação das dificuldades de aprendizagem, com escuta, instrumentos adequados e orientação personalizada.",
+  },
+  {
+    icon: Sparkles,
+    title: "Intervenção Psicopedagógica",
+    description:
+      "Plano de acompanhamento para fortalecer habilidades cognitivas, emocionais e comportamentais ligadas ao aprender.",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Parecer Psicopedagógico",
+    description:
+      "Elaboração de documentos técnicos para apoiar encaminhamentos, escola e família na tomada de decisão.",
+  },
+  {
+    icon: Users,
+    title: "Estimulação Cognitiva",
+    description:
+      "Atividades planejadas para idosos, com foco em memória, atenção, autonomia e qualidade de vida.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Teste Vocacional",
+    description:
+      "Orientação para adolescentes e adultos que precisam escolher caminhos acadêmicos ou profissionais.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Consultoria Psicopedagógica",
+    description:
+      "Apoio para quem deseja estruturar os primeiros passos na prática clínica psicopedagógica.",
+  },
+];
+
+const processSteps = [
+  {
+    title: "Primeiro contato",
+    description:
+      "Você explica a demanda pelo WhatsApp e recebe as orientações iniciais para o agendamento.",
+  },
+  {
+    title: "Avaliação da demanda",
+    description:
+      "A história, as dificuldades e os objetivos do atendimento são compreendidos com cuidado.",
+  },
+  {
+    title: "Plano de acompanhamento",
+    description:
+      "A intervenção é organizada de forma individualizada, com devolutiva e próximos passos claros.",
+  },
+];
+
+const faqs = [
+  {
+    question: "O atendimento é apenas para crianças?",
+    answer:
+      "Não. O acompanhamento pode beneficiar crianças, adolescentes, adultos e idosos, de acordo com a demanda apresentada.",
+  },
+  {
+    question: "Quando procurar uma psicopedagoga?",
+    answer:
+      "Quando dificuldades de aprendizagem, atenção, organização, leitura, escrita ou adaptação escolar persistem e começam a afetar a rotina.",
+  },
+  {
+    question: "Onde fica o atendimento?",
+    answer:
+      "Na Clínica Dr. Paulo Diogo, em Assú/RN. O contato pelo WhatsApp confirma horários e disponibilidade.",
+  },
+];
 
 const Website = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
-      {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-sm fixed w-full z-10 shadow-sm">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-xl md:text-2xl font-bold text-purple-800">
-            Psicopedagogia Clínica
-          </h1>
-          
-          {/* Mobile Menu Button */}
-          <button onClick={toggleMenu} className="md:hidden">
-            {isMenuOpen ? (
-              <X className="w-6 h-6 text-purple-800" />
-            ) : (
-              <Menu className="w-6 h-6 text-purple-800" />
-            )}
-          </button>
+    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white text-slate-800">
+      <header className="fixed inset-x-0 top-0 z-30 border-b border-white/70 bg-white/90 shadow-sm backdrop-blur">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6" aria-label="Navegação principal">
+          <a href="#top" className="flex flex-col leading-tight" onClick={closeMenu}>
+            <span className="text-base font-bold text-purple-800 md:text-lg">Bárbara Medeiros</span>
+            <span className="text-xs font-medium uppercase tracking-[0.18em] text-purple-600">Psicopedagoga</span>
+          </a>
 
-          <div className="hidden md:flex gap-6">
-            <a href="#about" className="text-gray-600 hover:text-purple-800">
-              Sobre
-            </a>
-            <a href="#services" className="text-gray-600 hover:text-purple-800">
-              Serviços
-            </a>
-            <a href="#contact" className="text-gray-600 hover:text-purple-800">
-              Contato
+          <div className="hidden items-center gap-7 md:flex">
+            {navItems.map((item) => (
+              <a key={item.href} href={item.href} className="text-sm font-medium text-slate-600 transition hover:text-purple-800">
+                {item.label}
+              </a>
+            ))}
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-purple-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-purple-700">
+              <MessageCircle className="h-4 w-4" />
+              WhatsApp
             </a>
           </div>
-        </div>
 
-        {/* Mobile Menu */}
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((current) => !current)}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-purple-800 md:hidden"
+            aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={isMenuOpen}
+          >
+            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </nav>
+
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t">
-            <div className="flex flex-col items-center py-4 space-y-4">
-              <a href="#about" className="text-gray-600 hover:text-purple-800" onClick={toggleMenu}>
-                Sobre
-              </a>
-              <a href="#services" className="text-gray-600 hover:text-purple-800" onClick={toggleMenu}>
-                Serviços
-              </a>
-              <a href="#contact" className="text-gray-600 hover:text-purple-800" onClick={toggleMenu}>
-                Contato
+          <div className="border-t border-slate-100 bg-white px-4 py-4 md:hidden">
+            <div className="mx-auto flex max-w-6xl flex-col gap-2">
+              {navItems.map((item) => (
+                <a key={item.href} href={item.href} onClick={closeMenu} className="rounded-md px-3 py-3 text-sm font-medium text-slate-700 hover:bg-purple-50">
+                  {item.label}
+                </a>
+              ))}
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-purple-600 px-4 py-3 text-sm font-semibold text-white" onClick={closeMenu}>
+                <MessageCircle className="h-4 w-4" />
+                Falar no WhatsApp
               </a>
             </div>
           </div>
         )}
-      </nav>
+      </header>
 
-      
-      {/* Hero Section */}
-<style>{`
-  .hero-section {
-    background-image: url('/image1.jpeg');
-    background-position: center center;
-    background-size: cover;
-  }
-  
-  @media (max-width: 768px) {
-    .hero-section {
-      background-image: url('/image.JPG');
-    }
-  }
-`}</style>
-
-<style>{`
-  .hero-section {
-    background-image: url('/image1.jpeg');
-    background-position: center center;
-    background-size: cover;
-  }
-  
-  @media (max-width: 768px) {
-    .hero-section {
-      background-image: url('/image.JPG');
-    }
-  }
-
-  .hero-section h2,
-  .hero-section p {
-    color: white !important;
-    -webkit-font-smoothing: antialiased;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  }
-`}</style>
-
-<section
-  className="hero-section pt-24 md:pt-32 pb-16 md:pb-20 px-4 md:px-6 relative min-h-[500px] md:min-h-[600px]"
->
-  <div className="absolute inset-0 bg-black/60"></div>
-  <div className="container mx-auto text-center relative z-10 mt-16 md:mt-32">
-    <h2 className="text-4xl md:text-5xl font-bold mb-6">
-      Bárbara Medeiros
-    </h2>
-    <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 px-4">
-      Transformando dificuldades em oportunidades de aprendizado.
-    </p>
-    <a href="https://wa.me/5584996544043?text=Olá,%20vim%20do%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!" target="_blank" rel="noopener noreferrer">
-      <button className="bg-purple-600 text-white px-6 md:px-8 py-3 rounded-full hover:bg-purple-700 transition-colors text-sm md:text-base">
-        Agende uma Consulta
-      </button>
-    </a>
-  </div>
-</section>
-
-      {/* About Section */}
-      <section id="about" className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold text-center text-purple-900 mb-6 md:mb-8">
-              Sobre Mim
-            </h3>
-            <div className="bg-purple-50 p-6 md:p-8 rounded-lg">
-              <p className="text-gray-600 mb-6 indent-8 text-sm md:text-base">
-                Sou Bárbara Medeiros, graduada em Pedagogia pela Universidade
-                Anhanguera com especialização em Psicopedagogia Clínica e
-                Institucional pela Faculdade do Leste Mineiro.{" "}
-                Atuo profissionalmente na área de Psicopedagogia, com foco na
-                intervenção terapêutica para dificuldades de aprendizagem,
-                auxiliando no desenvolvimento dos processos cognitivos e no
-                acompanhamento individual com ênfase na dinâmica comportamental.
-                Realizo aplicação de testes vocacionais e elaboração de laudos
-                sensoriais para crianças, adolescentes e adultos, proporcionando
-                um diagnóstico preciso e orientações personalizadas. Além disso,
-                desenvolvo programas de estimulação cognitiva para idosos,
-                promovendo a manutenção das funções mentais e o bem-estar ao
-                longo do envelhecimento.{" "}
-              </p>
+      <main id="top">
+        <section className="hero-section relative flex min-h-[520px] items-center overflow-hidden px-4 pb-16 pt-28 text-center md:min-h-[600px] md:px-6 md:pb-20 md:pt-32">
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="relative z-10 mx-auto max-w-3xl text-white">
+            <p className="mx-auto mb-4 inline-flex rounded-full bg-white/15 px-4 py-2 text-sm font-semibold backdrop-blur">
+              Atendimento psicopedagógico em Assú/RN
+            </p>
+            <h1 className="text-4xl font-bold leading-tight md:text-6xl">
+              Bárbara Medeiros
+            </h1>
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white/90 md:text-xl">
+              Transformando dificuldades de aprendizagem em caminhos possíveis, com acolhimento, avaliação e orientação clara.
+            </p>
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-purple-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-purple-700 md:text-base">
+                Agendar avaliação
+                <ChevronRight className="h-4 w-4" />
+              </a>
+              <a href="#services" className="inline-flex items-center justify-center rounded-full border border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15 md:text-base">
+                Ver áreas de atuação
+              </a>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <h3 className="text-2xl md:text-3xl font-bold text-center text-purple-900 mb-8 md:mb-12">
-            Áreas de Atuação
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <ServiceCard
-              icon={<Brain className="w-6 h-6 md:w-8 md:h-8 text-purple-600" />}
-              title="Avaliação e Intervenção Psicopedagógica"
-              description="Diagnóstico e intervenção personalizada para otimizar o processo de aprendizagem"
-            />
-            <ServiceCard
-              icon={<Sparkles className="w-6 h-6 md:w-8 md:h-8 text-purple-600" />}
-              title="Transtornos de Aprendizagem"
-              description="Acompanhamento especializado para TDAH, dislexia e outros transtornos"
-            />
-            <ServiceCard
-              icon={<Star className="w-6 h-6 md:w-8 md:h-8 text-purple-600" />}
-              title="Parecer Psicopedagógico"
-              description="Elaboração de laudos e pareceres técnicos detalhados"
-            />
-            <ServiceCard
-              icon={<Calendar className="w-6 h-6 md:w-8 md:h-8 text-purple-600" />}
-              title="Estimulação Cognitiva para Idosos"
-              description="Programas personalizados para manutenção das funções cognitivas"
-            />
-            <ServiceCard
-              icon={<Map className="w-6 h-6 md:w-8 md:h-8 text-purple-600" />}
-              title="Teste Vocacional"
-              description="Orientação profissional baseada em avaliações especializadas"
-            />
-            <ServiceCard
-              icon={<BookOpen className="w-6 h-6 md:w-8 md:h-8 text-purple-600" />}
-              title="Consultoria Psicopedagógica"
-              description="Passo a passo para iniciação clínica"
-            />
+        <section className="bg-white py-10 md:py-12" aria-label="Destaques do atendimento">
+          <div className="mx-auto grid max-w-6xl gap-3 px-4 md:grid-cols-3 md:px-6">
+            {highlights.map((item) => (
+              <div key={item} className="flex gap-3 rounded-lg border border-purple-100 bg-purple-50 p-4 text-sm leading-6 text-slate-700 shadow-sm">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 flex-none text-purple-600" />
+                <span>{item}</span>
+              </div>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="contact" className="py-16 md:py-20 bg-purple-50">
-        <div className="container mx-auto px-4 md:px-6">
-          <h3 className="text-2xl md:text-3xl font-bold text-center text-purple-900 mb-8 md:mb-12">
-            Contato
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <ContactInfo
-              icon={<Mail className="w-5 h-5 md:w-6 md:h-6 text-purple-600" />}
-              title="Email"
-              info="psicopedbarbara@gmail.com"
-            />
-            <ContactInfo
-              icon={<Phone className="w-5 h-5 md:w-6 md:h-6 text-purple-600" />}
-              title="Telefone"
-              info="(84) 99654-4043"
-            />
-            <ContactInfo
-              icon={<Map className="w-5 h-5 md:w-6 md:h-6 text-purple-600" />}
-              title="Clínica Dr. Paulo Diogo:"
-              info="R. Dr. Ernesto da Fonsêca - Dom Elizeu, Açu - RN, 59650-000"
-            />
+        <section className="bg-white py-14 md:py-18" aria-label="Quando procurar atendimento">
+          <div className="mx-auto max-w-6xl px-4 md:px-6">
+            <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-start">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-purple-600">Quando procurar</p>
+                <h2 className="mt-3 text-3xl font-bold text-purple-900 md:text-4xl">
+                  Alguns sinais merecem atenção.
+                </h2>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {signs.map((sign) => (
+                  <div key={sign} className="rounded-lg border border-slate-200 bg-white p-4 text-sm leading-6 text-slate-700 shadow-sm">
+                    {sign}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section id="about" className="scroll-mt-24 bg-purple-50 py-16 md:py-24">
+          <div className="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-[0.95fr_1.05fr] md:px-6 md:items-center">
+            <div className="overflow-hidden rounded-lg shadow-xl">
+              <img src="/image.JPG" alt="Bárbara Medeiros, psicopedagoga" className="h-full max-h-[520px] w-full object-cover" />
+            </div>
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-purple-600">Sobre a profissional</p>
+              <h2 className="mt-3 text-3xl font-bold text-purple-900 md:text-4xl">
+                Cuidado técnico para entender como cada pessoa aprende.
+              </h2>
+              <div className="mt-6 space-y-4 text-base leading-8 text-slate-700">
+                <p>
+                  Sou Bárbara Medeiros, graduada em Pedagogia pela Universidade Anhanguera e especialista em Psicopedagogia Clínica e Institucional pela Faculdade do Leste Mineiro.
+                </p>
+                <p>
+                  Atuo com avaliação, intervenção terapêutica, orientação vocacional, parecer psicopedagógico e estimulação cognitiva, sempre considerando a história, o ritmo e as necessidades de cada pessoa.
+                </p>
+                <p>
+                  O objetivo do atendimento é oferecer clareza sobre as dificuldades, construir estratégias possíveis e apoiar famílias, escolas e pacientes em decisões mais seguras.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="services" className="scroll-mt-24 bg-white py-16 md:py-24">
+          <div className="mx-auto max-w-6xl px-4 md:px-6">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-purple-600">Áreas de atuação</p>
+              <h2 className="mt-3 text-3xl font-bold text-purple-900 md:text-4xl">
+                Atendimento direcionado para aprendizagem, desenvolvimento e orientação.
+              </h2>
+            </div>
+
+            <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {services.map((service) => (
+                <ServiceCard key={service.title} {...service} />
+              ))}
+            </div>
+
+            <div className="mt-10 rounded-lg bg-purple-900 p-6 text-white md:flex md:items-center md:justify-between md:p-8">
+              <div>
+                <h3 className="text-2xl font-bold">Não sabe qual atendimento procurar?</h3>
+                <p className="mt-2 max-w-2xl text-sm leading-6 text-white/80">
+                  Explique a situação pelo WhatsApp para receber uma orientação inicial sobre o melhor caminho.
+                </p>
+              </div>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-purple-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-purple-700 md:mt-0">
+                Falar com Bárbara
+                <MessageCircle className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="process" className="scroll-mt-24 bg-purple-50 py-16 md:py-24">
+          <div className="mx-auto max-w-6xl px-4 md:px-6">
+            <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:items-start">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-purple-600">Como funciona</p>
+                <h2 className="mt-3 text-3xl font-bold text-purple-900 md:text-4xl">
+                  Um processo simples, com escuta e direção.
+                </h2>
+              </div>
+              <div className="grid gap-4">
+                {processSteps.map((step, index) => (
+                  <div key={step.title} className="flex gap-4 rounded-lg bg-white p-5 shadow-sm">
+                    <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-purple-600 text-sm font-bold text-white">
+                      {index + 1}
+                    </span>
+                    <div>
+                      <h3 className="text-lg font-bold text-purple-900">{step.title}</h3>
+                      <p className="mt-1 text-sm leading-6 text-slate-600">{step.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-16 md:py-24">
+          <div className="mx-auto max-w-5xl px-4 md:px-6">
+            <div className="text-center">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-purple-600">Dúvidas frequentes</p>
+              <h2 className="mt-3 text-3xl font-bold text-purple-900 md:text-4xl">
+                Informações para o primeiro contato.
+              </h2>
+            </div>
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
+              {faqs.map((faq) => (
+                <article key={faq.question} className="rounded-lg border border-slate-200 bg-white p-5">
+                  <h3 className="font-bold text-purple-900">{faq.question}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="scroll-mt-24 bg-purple-900 py-16 text-white md:py-20">
+          <div className="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-[0.9fr_1.1fr] md:px-6 md:items-center">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-purple-100">Contato</p>
+              <h2 className="mt-3 text-3xl font-bold md:text-4xl">Agende uma avaliação ou tire suas dúvidas.</h2>
+              <p className="mt-5 max-w-xl leading-8 text-white/80">
+                Atendimento na Clínica Dr. Paulo Diogo, em Assú/RN. Para confirmar disponibilidade, envie uma mensagem pelo WhatsApp.
+              </p>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-purple-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-purple-700 md:text-base">
+                Chamar no WhatsApp
+                <MessageCircle className="h-5 w-5" />
+              </a>
+            </div>
+
+            <div className="grid gap-4">
+              <ContactLink icon={Phone} title="Telefone / WhatsApp" href="tel:+5584996544043" text="(84) 99654-4043" />
+              <ContactLink icon={Mail} title="Email" href="mailto:psicopedbarbara@gmail.com" text="psicopedbarbara@gmail.com" />
+              <ContactLink icon={MapPin} title="Endereço" href={mapUrl} text="R. Dr. Ernesto da Fonsêca - Dom Elizeu, Assú/RN" external />
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   );
 };
 
-const ServiceCard = ({ icon, title, description }) => (
-  <div className="bg-purple-50 p-4 md:p-6 rounded-lg text-center hover:shadow-lg transition-shadow">
-    <div className="flex justify-center mb-3 md:mb-4">{icon}</div>
-    <h4 className="text-lg md:text-xl font-semibold text-purple-900 mb-2">{title}</h4>
-    <p className="text-gray-600 text-sm md:text-base">{description}</p>
-  </div>
+const ServiceCard = ({ icon: Icon, title, description }) => (
+  <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-purple-50 text-purple-800">
+      <Icon className="h-6 w-6" />
+    </div>
+    <h3 className="text-lg font-bold text-purple-900">{title}</h3>
+    <p className="mt-3 text-sm leading-6 text-slate-600">{description}</p>
+  </article>
 );
 
-const ContactInfo = ({ icon, title, info }) => (
-  <div className="flex flex-col items-center text-center">
-    <div className="mb-3 md:mb-4">{icon}</div>
-    <h4 className="text-base md:text-lg font-semibold text-purple-900 mb-2">{title}</h4>
-    <p className="text-gray-600 text-sm md:text-base">{info}</p>
-  </div>
+const ContactLink = ({ icon: Icon, title, href, text, external = false }) => (
+  <a href={href} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined} className="group flex gap-4 rounded-lg border border-white/15 bg-white/10 p-5 transition hover:bg-white/15">
+    <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-white text-purple-900">
+      <Icon className="h-5 w-5" />
+    </span>
+    <span>
+      <span className="block text-sm font-semibold text-purple-100">{title}</span>
+      <span className="mt-1 block text-sm leading-6 text-white/85 group-hover:text-white">{text}</span>
+    </span>
+  </a>
 );
 
 export default Website;
