@@ -349,7 +349,7 @@ const Website = () => {
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-purple-100">Contato</p>
               <h2 className="mt-3 text-3xl font-bold md:text-4xl">Agende uma avaliação ou tire suas dúvidas.</h2>
               <p className="mt-5 max-w-xl leading-8 text-white/80">
-                Atendimento Clínico no Centro Médico Avançado - CMA, Rua 15 de Novembro, 232 - Dom Elizeu, Açu/RN, às terças (manhã e tarde), quartas e quintas.
+                Atendimento Clínico no Centro Médico Avançado - CMA, Rua 15 de Novembro, 232 - Dom Elizeu, Açu/RN, às terças (manhã e tarde), quartas e quintas (tarde).
               </p>
               <a href={appointmentWhatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-purple-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-purple-700 md:text-base">
                 Agendar no CMA
