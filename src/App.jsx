@@ -15,11 +15,14 @@ import {
   X,
 } from "lucide-react";
 
-const whatsappUrl =
-  "https://wa.me/5584996544043?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20psicopedag%C3%B3gica.";
+const appointmentWhatsappUrl =
+  "https://wa.me/5584996093641?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20psicopedag%C3%B3gica.";
+
+const infoWhatsappUrl =
+  "https://wa.me/5584996544043?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20ou%20pedir%20informa%C3%A7%C3%B5es.";
 
 const mapUrl =
-  "https://www.google.com/maps/search/?api=1&query=Rua%20Dr.%20Ernesto%20da%20Fonseca%20Dom%20Elizeu%20Assu%20RN%2059650-000";
+  "https://www.google.com/maps/search/?api=1&query=Centro%20Medico%20Avancado%20Rua%2015%20de%20Novembro%20232%20Dom%20Elizeu%20Acu%20RN";
 
 const WhatsAppIcon = ({ className = "h-5 w-5" }) => (
   <svg
@@ -117,13 +120,16 @@ const faqs = [
   },
   {
     question: "Quando procurar uma psicopedagoga?",
-    answer:
-      "Quando dificuldades de aprendizagem, atenção, organização, leitura, escrita ou adaptação escolar persistem e começam a afetar a rotina.",
+    answer: (
+      <>
+        Quando há necessidade de <strong>compreender, desenvolver ou potencializar</strong> o processo de aprendizagem em qualquer fase da vida.
+      </>
+    ),
   },
   {
     question: "Onde fica o atendimento?",
     answer:
-      "Na Clínica Dr. Paulo Diogo, em Assú/RN. O contato pelo WhatsApp confirma horários e disponibilidade.",
+      "No Centro Médico Avançado, em Açu/RN. O contato pelo WhatsApp confirma horários e disponibilidade.",
   },
 ];
 
@@ -147,7 +153,7 @@ const Website = () => {
                 {item.label}
               </a>
             ))}
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-purple-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-purple-700">
+            <a href={infoWhatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-purple-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-purple-700">
               <WhatsAppIcon className="h-4 w-4" />
               WhatsApp
             </a>
@@ -172,7 +178,7 @@ const Website = () => {
                   {item.label}
                 </a>
               ))}
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-purple-600 px-4 py-3 text-sm font-semibold text-white" onClick={closeMenu}>
+              <a href={infoWhatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-purple-600 px-4 py-3 text-sm font-semibold text-white" onClick={closeMenu}>
                 <WhatsAppIcon className="h-4 w-4" />
                 Falar no WhatsApp
               </a>
@@ -186,7 +192,7 @@ const Website = () => {
           <div className="absolute inset-0 bg-black/60" />
           <div className="relative z-10 mx-auto max-w-3xl text-white">
             <p className="mx-auto mb-4 inline-flex rounded-full bg-white/15 px-4 py-2 text-sm font-semibold backdrop-blur">
-              Atendimento psicopedagógico em Assú/RN
+              Atendimento psicopedagógico em Açu/RN
             </p>
             <h1 className="text-4xl font-bold leading-tight md:text-6xl">
               Bárbara Medeiros
@@ -195,7 +201,7 @@ const Website = () => {
               Transformando dificuldades de aprendizagem em caminhos possíveis, com acolhimento, avaliação e orientação clara.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-purple-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-purple-700 md:text-base">
+              <a href={appointmentWhatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-purple-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-purple-700 md:text-base">
                 Agendar avaliação
                 <ChevronRight className="h-4 w-4" />
               </a>
@@ -284,7 +290,7 @@ const Website = () => {
                   Explique a situação pelo WhatsApp para receber uma orientação inicial sobre o melhor caminho.
                 </p>
               </div>
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-purple-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-purple-700 md:mt-0">
+              <a href={infoWhatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-purple-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-purple-700 md:mt-0">
                 Falar com Bárbara
                 <WhatsAppIcon className="h-4 w-4" />
               </a>
@@ -343,25 +349,26 @@ const Website = () => {
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-purple-100">Contato</p>
               <h2 className="mt-3 text-3xl font-bold md:text-4xl">Agende uma avaliação ou tire suas dúvidas.</h2>
               <p className="mt-5 max-w-xl leading-8 text-white/80">
-                Atendimento na Clínica Dr. Paulo Diogo, em Assú/RN. Para confirmar disponibilidade, envie uma mensagem pelo WhatsApp.
+                Atendimento Clínico no Centro Médico Avançado - CMA, Rua 15 de Novembro, 232 - Dom Elizeu, Açu/RN, às terças (manhã e tarde), quartas e quintas.
               </p>
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-purple-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-purple-700 md:text-base">
-                Chamar no WhatsApp
+              <a href={appointmentWhatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-purple-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-purple-700 md:text-base">
+                Agendar no CMA
                 <WhatsAppIcon className="h-5 w-5" />
               </a>
             </div>
 
             <div className="grid gap-4">
-              <ContactLink icon={Phone} title="Telefone / WhatsApp" href="tel:+5584996544043" text="(84) 99654-4043" />
+              <ContactLink icon={Phone} title="Agendamento CMA" href="tel:+5584996093641" text="(84) 99609-3641" />
+              <ContactLink icon={Phone} title="Dúvidas ou informações" href="tel:+5584996544043" text="(84) 99654-4043" />
               <ContactLink icon={Mail} title="Email" href="mailto:psicopedbarbara@gmail.com" text="psicopedbarbara@gmail.com" />
-              <ContactLink icon={MapPin} title="Endereço" href={mapUrl} text="R. Dr. Ernesto da Fonsêca - Dom Elizeu, Assú/RN" external />
+              <ContactLink icon={MapPin} title="Endereço" href={mapUrl} text="Centro Médico Avançado - Rua 15 de Novembro, 232 - Dom Elizeu, Açu/RN" external />
             </div>
           </div>
         </section>
       </main>
 
       <a
-        href={whatsappUrl}
+        href={infoWhatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-5 right-5 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-purple-600 text-white shadow-xl shadow-purple-900/25 transition hover:bg-purple-700 focus:outline-none focus:ring-4 focus:ring-purple-200 md:bottom-6 md:right-6"
