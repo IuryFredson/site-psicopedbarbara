@@ -39,7 +39,7 @@ a {
 
 @media (max-width: 768px) {
   .hero-section {
-    background-image: url("/image.JPG");
+    background-image: url("/NovaImagemDoHeroMobile.png");
     background-position: center top;
   }
 }
