@@ -15,11 +15,14 @@ import {
   X,
 } from "lucide-react";
 
-const whatsappUrl =
-  "https://wa.me/5584996544043?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20psicopedag%C3%B3gica.";
+const appointmentWhatsappUrl =
+  "https://wa.me/5584996093641?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20psicopedag%C3%B3gica.";
+
+const infoWhatsappUrl =
+  "https://wa.me/5584996544043?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20ou%20pedir%20informa%C3%A7%C3%B5es.";
 
 const mapUrl =
-  "https://www.google.com/maps/search/?api=1&query=Rua%20Dr.%20Ernesto%20da%20Fonseca%20Dom%20Elizeu%20Assu%20RN%2059650-000";
+  "https://www.google.com/maps/search/?api=1&query=Centro%20Medico%20Avancado%20Rua%2015%20de%20Novembro%20232%20Dom%20Elizeu%20Acu%20RN";
 
 const WhatsAppIcon = ({ className = "h-5 w-5" }) => (
   <svg
@@ -117,13 +120,16 @@ const faqs = [
   },
   {
     question: "Quando procurar uma psicopedagoga?",
-    answer:
-      "Quando dificuldades de aprendizagem, atenção, organização, leitura, escrita ou adaptação escolar persistem e começam a afetar a rotina.",
+    answer: (
+      <>
+        Quando há necessidade de <strong>compreender, desenvolver ou potencializar</strong> o processo de aprendizagem em qualquer fase da vida.
+      </>
+    ),
   },
   {
     question: "Onde fica o atendimento?",
     answer:
-      "Na Clínica Dr. Paulo Diogo, em Assú/RN. O contato pelo WhatsApp confirma horários e disponibilidade.",
+      "No Centro Médico Avançado, em Açu/RN. O contato pelo WhatsApp confirma horários e disponibilidade.",
   },
 ];
 
@@ -133,21 +139,21 @@ const Website = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white text-slate-800">
+    <div className="min-h-screen bg-[#fdfdfd] text-slate-800">
       <header className="fixed inset-x-0 top-0 z-30 border-b border-white/70 bg-white/90 shadow-sm backdrop-blur">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6" aria-label="Navegação principal">
           <a href="#top" className="flex flex-col leading-tight" onClick={closeMenu}>
-            <span className="text-base font-bold text-purple-800 md:text-lg">Bárbara Medeiros</span>
-            <span className="text-xs font-medium uppercase tracking-[0.18em] text-purple-600">Psicopedagoga</span>
+            <span className="text-base font-bold text-slate-900 md:text-lg">Bárbara Medeiros</span>
+            <span className="text-xs font-medium uppercase tracking-[0.18em] text-slate-600">Psicopedagoga</span>
           </a>
 
           <div className="hidden items-center gap-7 md:flex">
             {navItems.map((item) => (
-              <a key={item.href} href={item.href} className="text-sm font-medium text-slate-600 transition hover:text-purple-800">
+              <a key={item.href} href={item.href} className="text-sm font-medium text-slate-600 transition hover:text-slate-900">
                 {item.label}
               </a>
             ))}
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-purple-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-purple-700">
+            <a href={infoWhatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#ffc0d8] px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-[#fff8c1]">
               <WhatsAppIcon className="h-4 w-4" />
               WhatsApp
             </a>
@@ -156,7 +162,7 @@ const Website = () => {
           <button
             type="button"
             onClick={() => setIsMenuOpen((current) => !current)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-purple-800 md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-900 md:hidden"
             aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={isMenuOpen}
           >
@@ -168,11 +174,11 @@ const Website = () => {
           <div className="border-t border-slate-100 bg-white px-4 py-4 md:hidden">
             <div className="mx-auto flex max-w-6xl flex-col gap-2">
               {navItems.map((item) => (
-                <a key={item.href} href={item.href} onClick={closeMenu} className="rounded-md px-3 py-3 text-sm font-medium text-slate-700 hover:bg-purple-50">
+                <a key={item.href} href={item.href} onClick={closeMenu} className="rounded-md px-3 py-3 text-sm font-medium text-slate-700 hover:bg-[#fff8c1]">
                   {item.label}
                 </a>
               ))}
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-purple-600 px-4 py-3 text-sm font-semibold text-white" onClick={closeMenu}>
+              <a href={infoWhatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#ffc0d8] px-4 py-3 text-sm font-semibold text-slate-900" onClick={closeMenu}>
                 <WhatsAppIcon className="h-4 w-4" />
                 Falar no WhatsApp
               </a>
@@ -186,7 +192,7 @@ const Website = () => {
           <div className="absolute inset-0 bg-black/60" />
           <div className="relative z-10 mx-auto max-w-3xl text-white">
             <p className="mx-auto mb-4 inline-flex rounded-full bg-white/15 px-4 py-2 text-sm font-semibold backdrop-blur">
-              Atendimento psicopedagógico em Assú/RN
+              Atendimento psicopedagógico em Açu/RN
             </p>
             <h1 className="text-4xl font-bold leading-tight md:text-6xl">
               Bárbara Medeiros
@@ -195,7 +201,7 @@ const Website = () => {
               Transformando dificuldades de aprendizagem em caminhos possíveis, com acolhimento, avaliação e orientação clara.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-purple-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-purple-700 md:text-base">
+              <a href={appointmentWhatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#ffc0d8] px-6 py-3 text-sm font-bold text-slate-900 shadow-lg transition hover:bg-[#fff8c1] md:text-base">
                 Agendar avaliação
                 <ChevronRight className="h-4 w-4" />
               </a>
@@ -209,8 +215,8 @@ const Website = () => {
         <section className="bg-white py-10 md:py-12" aria-label="Destaques do atendimento">
           <div className="mx-auto grid max-w-6xl gap-3 px-4 md:grid-cols-3 md:px-6">
             {highlights.map((item) => (
-              <div key={item} className="flex gap-3 rounded-lg border border-purple-100 bg-purple-50 p-4 text-sm leading-6 text-slate-700 shadow-sm">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 flex-none text-purple-600" />
+              <div key={item} className="flex gap-3 rounded-lg border border-[#d0f4f4] bg-[#d0f4f4] p-4 text-sm leading-6 text-slate-700 shadow-sm">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 flex-none text-[#ffc0d8]" />
                 <span>{item}</span>
               </div>
             ))}
@@ -221,8 +227,8 @@ const Website = () => {
           <div className="mx-auto max-w-6xl px-4 md:px-6">
             <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-start">
               <div>
-                <p className="text-sm font-bold uppercase tracking-[0.18em] text-purple-600">Quando procurar</p>
-                <h2 className="mt-3 text-3xl font-bold text-purple-900 md:text-4xl">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-900">Quando procurar</p>
+                <h2 className="mt-3 text-3xl font-bold text-slate-900 md:text-4xl">
                   Alguns sinais merecem atenção.
                 </h2>
               </div>
@@ -237,14 +243,14 @@ const Website = () => {
           </div>
         </section>
 
-        <section id="about" className="scroll-mt-24 bg-purple-50 py-16 md:py-24">
+        <section id="about" className="scroll-mt-24 bg-[#fff8c1] py-16 md:py-24">
           <div className="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-[0.95fr_1.05fr] md:px-6 md:items-center">
             <div className="overflow-hidden rounded-lg shadow-xl">
               <img src="/image.JPG" alt="Bárbara Medeiros, psicopedagoga" className="h-full max-h-[520px] w-full object-cover" />
             </div>
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-purple-600">Sobre a profissional</p>
-              <h2 className="mt-3 text-3xl font-bold text-purple-900 md:text-4xl">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-900">Sobre a profissional</p>
+              <h2 className="mt-3 text-3xl font-bold text-slate-900 md:text-4xl">
                 Cuidado técnico para entender como cada pessoa aprende.
               </h2>
               <div className="mt-6 space-y-4 text-base leading-8 text-slate-700">
@@ -265,8 +271,8 @@ const Website = () => {
         <section id="services" className="scroll-mt-24 bg-white py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-4 md:px-6">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-purple-600">Áreas de atuação</p>
-              <h2 className="mt-3 text-3xl font-bold text-purple-900 md:text-4xl">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-900">Áreas de atuação</p>
+              <h2 className="mt-3 text-3xl font-bold text-slate-900 md:text-4xl">
                 Atendimento direcionado para aprendizagem, desenvolvimento e orientação.
               </h2>
             </div>
@@ -277,14 +283,14 @@ const Website = () => {
               ))}
             </div>
 
-            <div className="mt-10 rounded-lg bg-purple-900 p-6 text-white md:flex md:items-center md:justify-between md:p-8">
+            <div className="mt-10 rounded-lg bg-[#d0f4f4] p-6 text-slate-900 md:flex md:items-center md:justify-between md:p-8">
               <div>
                 <h3 className="text-2xl font-bold">Não sabe qual atendimento procurar?</h3>
-                <p className="mt-2 max-w-2xl text-sm leading-6 text-white/80">
+                <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-700">
                   Explique a situação pelo WhatsApp para receber uma orientação inicial sobre o melhor caminho.
                 </p>
               </div>
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-purple-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-purple-700 md:mt-0">
+              <a href={infoWhatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-[#ffc0d8] px-5 py-3 text-sm font-bold text-slate-900 transition hover:bg-[#fff8c1] md:mt-0">
                 Falar com Bárbara
                 <WhatsAppIcon className="h-4 w-4" />
               </a>
@@ -292,23 +298,23 @@ const Website = () => {
           </div>
         </section>
 
-        <section id="process" className="scroll-mt-24 bg-purple-50 py-16 md:py-24">
+        <section id="process" className="scroll-mt-24 bg-[#d0f4f4] py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-4 md:px-6">
             <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:items-start">
               <div>
-                <p className="text-sm font-bold uppercase tracking-[0.18em] text-purple-600">Como funciona</p>
-                <h2 className="mt-3 text-3xl font-bold text-purple-900 md:text-4xl">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-900">Como funciona</p>
+                <h2 className="mt-3 text-3xl font-bold text-slate-900 md:text-4xl">
                   Um processo simples, com escuta e direção.
                 </h2>
               </div>
               <div className="grid gap-4">
                 {processSteps.map((step, index) => (
                   <div key={step.title} className="flex gap-4 rounded-lg bg-white p-5 shadow-sm">
-                    <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-purple-600 text-sm font-bold text-white">
+                    <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-[#ffc0d8] text-sm font-bold text-slate-900">
                       {index + 1}
                     </span>
                     <div>
-                      <h3 className="text-lg font-bold text-purple-900">{step.title}</h3>
+                      <h3 className="text-lg font-bold text-slate-900">{step.title}</h3>
                       <p className="mt-1 text-sm leading-6 text-slate-600">{step.description}</p>
                     </div>
                   </div>
@@ -321,15 +327,15 @@ const Website = () => {
         <section className="bg-white py-16 md:py-24">
           <div className="mx-auto max-w-5xl px-4 md:px-6">
             <div className="text-center">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-purple-600">Dúvidas frequentes</p>
-              <h2 className="mt-3 text-3xl font-bold text-purple-900 md:text-4xl">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-900">Dúvidas frequentes</p>
+              <h2 className="mt-3 text-3xl font-bold text-slate-900 md:text-4xl">
                 Informações para o primeiro contato.
               </h2>
             </div>
             <div className="mt-10 grid gap-4 md:grid-cols-3">
               {faqs.map((faq) => (
                 <article key={faq.question} className="rounded-lg border border-slate-200 bg-white p-5">
-                  <h3 className="font-bold text-purple-900">{faq.question}</h3>
+                  <h3 className="font-bold text-slate-900">{faq.question}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
                 </article>
               ))}
@@ -337,34 +343,35 @@ const Website = () => {
           </div>
         </section>
 
-        <section id="contact" className="scroll-mt-24 bg-purple-900 py-16 text-white md:py-20">
+        <section id="contact" className="scroll-mt-24 bg-[#ffc0d8] py-16 text-slate-900 md:py-20">
           <div className="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-[0.9fr_1.1fr] md:px-6 md:items-center">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-purple-100">Contato</p>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-700">Contato</p>
               <h2 className="mt-3 text-3xl font-bold md:text-4xl">Agende uma avaliação ou tire suas dúvidas.</h2>
-              <p className="mt-5 max-w-xl leading-8 text-white/80">
-                Atendimento na Clínica Dr. Paulo Diogo, em Assú/RN. Para confirmar disponibilidade, envie uma mensagem pelo WhatsApp.
+              <p className="mt-5 max-w-xl leading-8 text-slate-700">
+                Atendimento Clínico no Centro Médico Avançado - CMA, Rua 15 de Novembro, 232 - Dom Elizeu, Açu/RN, às terças (manhã e tarde), quartas e quintas (tarde).
               </p>
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-purple-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-purple-700 md:text-base">
-                Chamar no WhatsApp
+              <a href={appointmentWhatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-[#fff8c1] px-6 py-3 text-sm font-bold text-slate-900 shadow-lg transition hover:bg-white md:text-base">
+                Agendar no CMA
                 <WhatsAppIcon className="h-5 w-5" />
               </a>
             </div>
 
             <div className="grid gap-4">
-              <ContactLink icon={Phone} title="Telefone / WhatsApp" href="tel:+5584996544043" text="(84) 99654-4043" />
+              <ContactLink icon={Phone} title="Agendamento CMA" href="tel:+5584996093641" text="(84) 99609-3641" />
+              <ContactLink icon={Phone} title="Dúvidas ou informações" href="tel:+5584996544043" text="(84) 99654-4043" />
               <ContactLink icon={Mail} title="Email" href="mailto:psicopedbarbara@gmail.com" text="psicopedbarbara@gmail.com" />
-              <ContactLink icon={MapPin} title="Endereço" href={mapUrl} text="R. Dr. Ernesto da Fonsêca - Dom Elizeu, Assú/RN" external />
+              <ContactLink icon={MapPin} title="Endereço" href={mapUrl} text="Centro Médico Avançado - Rua 15 de Novembro, 232 - Dom Elizeu, Açu/RN" external />
             </div>
           </div>
         </section>
       </main>
 
       <a
-        href={whatsappUrl}
+        href={infoWhatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-5 right-5 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-purple-600 text-white shadow-xl shadow-purple-900/25 transition hover:bg-purple-700 focus:outline-none focus:ring-4 focus:ring-purple-200 md:bottom-6 md:right-6"
+        className="fixed bottom-5 right-5 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#ffc0d8] text-slate-900 shadow-xl shadow-[#ffc0d8]/25 transition hover:bg-[#fff8c1] focus:outline-none focus:ring-4 focus:ring-[#d0f4f4] md:bottom-6 md:right-6"
         aria-label="Falar com Bárbara pelo WhatsApp"
       >
         <WhatsAppIcon className="h-7 w-7" />
@@ -375,22 +382,22 @@ const Website = () => {
 
 const ServiceCard = ({ icon: Icon, title, description }) => (
   <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
-    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-purple-50 text-purple-800">
+    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-[#d0f4f4] text-slate-900">
       <Icon className="h-6 w-6" />
     </div>
-    <h3 className="text-lg font-bold text-purple-900">{title}</h3>
+    <h3 className="text-lg font-bold text-slate-900">{title}</h3>
     <p className="mt-3 text-sm leading-6 text-slate-600">{description}</p>
   </article>
 );
 
 const ContactLink = ({ icon: Icon, title, href, text, external = false }) => (
-  <a href={href} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined} className="group flex gap-4 rounded-lg border border-white/15 bg-white/10 p-5 transition hover:bg-white/15">
-    <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-white text-purple-900">
+  <a href={href} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined} className="group flex gap-4 rounded-lg border border-slate-900/10 bg-white/60 p-5 transition hover:bg-white/80">
+    <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-[#d0f4f4] text-slate-900">
       <Icon className="h-5 w-5" />
     </span>
     <span>
-      <span className="block text-sm font-semibold text-purple-100">{title}</span>
-      <span className="mt-1 block text-sm leading-6 text-white/85 group-hover:text-white">{text}</span>
+      <span className="block text-sm font-semibold text-slate-700">{title}</span>
+      <span className="mt-1 block text-sm leading-6 text-slate-700 group-hover:text-slate-900">{text}</span>
     </span>
   </a>
 );
