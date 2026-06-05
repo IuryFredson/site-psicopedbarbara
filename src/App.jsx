@@ -261,13 +261,16 @@ const Website = () => {
                   Vejo a aprendizagem como um caminho possível para todos, em qualquer fase da vida, e acredito que aprender deve ser um processo leve, acolhedor e até prazeroso.
                 </p>
                 <p>
-                  Atuo na área da Psicopedagogia, desenvolvendo intervenções terapêuticas voltadas ao processo cognitivo de aprendizagem, sempre com um olhar individualizado e respeitoso.
+                  Atuo na área da Psicopedagogia, desenvolvendo intervenções terapêuticas voltadas ao processo de aprendizagem, sempre com um olhar individualizado, acolhedor e respeitoso.
                 </p>
                 <p>
-                  Realizo acompanhamentos em consultório, atendendo crianças e adolescentes de forma clínica. Também trabalho com estimulação cognitiva para idosos, levando esse cuidado a cidades vizinhas por meio de ações específicas.
+                  Realizo atendimentos com crianças, adolescentes, jovens e adultos, auxiliando no desenvolvimento de habilidades cognitivas, acadêmicas, emocionais e funcionais relacionadas à aprendizagem em suas diferentes fases da vida.
                 </p>
                 <p>
-                  Meu propósito é caminhar junto com cada pessoa, ajudando-a a descobrir suas potencialidades e mostrando, na prática, que todos podem e merecem aprender todos os dias.
+                  Também trabalho com estimulação cognitiva para idosos, promovendo atividades que contribuem para a manutenção e o fortalecimento das funções cognitivas, favorecendo a autonomia, a qualidade de vida e o envelhecimento saudável.
+                </p>
+                <p>
+                  Meu propósito é caminhar junto com cada pessoa, ajudando-a a reconhecer suas potencialidades e a construir caminhos para uma aprendizagem mais significativa, respeitando sua individualidade e seu ritmo de desenvolvimento.
                 </p>
               </div>
             </div>
