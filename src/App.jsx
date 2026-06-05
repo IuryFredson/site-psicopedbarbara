@@ -48,6 +48,24 @@ const highlights = [
   "Orientação clara para família, escola ou pessoa atendida",
 ];
 
+const aboutHighlights = [
+  {
+    icon: HeartHandshake,
+    title: "Olhar acolhedor",
+    description: "Intervenções respeitosas, construídas a partir da história e do ritmo de cada pessoa.",
+  },
+  {
+    icon: Brain,
+    title: "Aprendizagem em fases",
+    description: "Acompanhamento para crianças, adolescentes, jovens, adultos e idosos.",
+  },
+  {
+    icon: Sparkles,
+    title: "Potencialidades",
+    description: "Estratégias para fortalecer autonomia, habilidades cognitivas e aprendizagem significativa.",
+  },
+];
+
 const signs = [
   "Dificuldade persistente em leitura, escrita ou matemática",
   "Desatenção, baixa organização ou queda no rendimento escolar",
@@ -212,18 +230,20 @@ const Website = () => {
           </div>
         </section>
 
-        <section className="bg-white py-10 md:py-12" aria-label="Destaques do atendimento">
-          <div className="mx-auto grid max-w-6xl gap-3 px-4 md:grid-cols-3 md:px-6">
+        <section className="bg-gradient-to-b from-white to-[#fdfdfd] py-12 md:py-14" aria-label="Destaques do atendimento">
+          <div className="mx-auto grid max-w-6xl gap-4 px-4 md:grid-cols-3 md:px-6">
             {highlights.map((item) => (
-              <div key={item} className="flex gap-3 rounded-lg border border-[#d0f4f4] bg-[#d0f4f4] p-4 text-sm leading-6 text-slate-700 shadow-sm">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 flex-none text-[#ffc0d8]" />
+              <div key={item} className="flex gap-3 rounded-lg border border-slate-900/8 bg-white p-5 text-sm leading-6 text-slate-700 shadow-sm shadow-slate-900/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/8">
+                <span className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-[#d0f4f4] text-slate-900">
+                  <CheckCircle2 className="h-4 w-4 text-[#ffc0d8]" />
+                </span>
                 <span>{item}</span>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="bg-white py-14 md:py-18" aria-label="Quando procurar atendimento">
+        <section className="bg-gradient-to-b from-[#fdfdfd] to-[#fff8c1]/45 py-16 md:py-20" aria-label="Quando procurar atendimento">
           <div className="mx-auto max-w-6xl px-4 md:px-6">
             <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-start">
               <div>
@@ -234,7 +254,7 @@ const Website = () => {
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
                 {signs.map((sign) => (
-                  <div key={sign} className="rounded-lg border border-slate-200 bg-white p-4 text-sm leading-6 text-slate-700 shadow-sm">
+                  <div key={sign} className="rounded-lg border border-slate-900/8 bg-white/90 p-5 text-sm leading-6 text-slate-700 shadow-sm shadow-slate-900/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/8">
                     {sign}
                   </div>
                 ))}
@@ -243,10 +263,12 @@ const Website = () => {
           </div>
         </section>
 
-        <section id="about" className="scroll-mt-24 bg-[#fff8c1] py-16 md:py-24">
-          <div className="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-[0.95fr_1.05fr] md:px-6 md:items-center">
-            <div className="overflow-hidden rounded-lg shadow-xl">
-              <img src="/image.JPG" alt="Bárbara Medeiros, psicopedagoga" className="h-full max-h-[520px] w-full object-cover" />
+        <section id="about" className="scroll-mt-24 bg-gradient-to-br from-[#fff8c1] via-[#fdfdfd] to-[#d0f4f4]/60 py-16 md:py-24">
+          <div className="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-[0.9fr_1.1fr] md:px-6 md:items-center">
+            <div className="relative mx-auto w-full max-w-md">
+              <div className="relative overflow-hidden rounded-lg border border-white bg-white p-3 shadow-2xl shadow-slate-900/10">
+                <img src="/image.JPG" alt="Bárbara Medeiros, psicopedagoga" className="aspect-[4/5] w-full rounded-lg object-cover object-top" />
+              </div>
             </div>
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-900">Sobre a profissional</p>
@@ -273,11 +295,22 @@ const Website = () => {
                   Meu propósito é caminhar junto com cada pessoa, ajudando-a a reconhecer suas potencialidades e a construir caminhos para uma aprendizagem mais significativa, respeitando sua individualidade e seu ritmo de desenvolvimento.
                 </p>
               </div>
+              <div className="mt-7 grid gap-3 sm:grid-cols-3">
+                {aboutHighlights.map(({ icon: Icon, title, description }) => (
+                  <div key={title} className="rounded-lg border border-slate-900/8 bg-white/80 p-4 shadow-sm shadow-slate-900/5 backdrop-blur">
+                    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-[#ffc0d8]/80 text-slate-900">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-sm font-bold text-slate-900">{title}</h3>
+                    <p className="mt-2 text-xs leading-5 text-slate-600">{description}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        <section id="services" className="scroll-mt-24 bg-white py-16 md:py-24">
+        <section id="services" className="scroll-mt-24 bg-gradient-to-b from-white to-[#fdfdfd] py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-4 md:px-6">
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-900">Áreas de atuação</p>
@@ -292,14 +325,14 @@ const Website = () => {
               ))}
             </div>
 
-            <div className="mt-10 rounded-lg bg-[#d0f4f4] p-6 text-slate-900 md:flex md:items-center md:justify-between md:p-8">
+            <div className="mt-10 rounded-lg border border-slate-900/8 bg-gradient-to-r from-[#d0f4f4] to-white p-6 text-slate-900 shadow-xl shadow-slate-900/6 md:flex md:items-center md:justify-between md:p-8">
               <div>
                 <h3 className="text-2xl font-bold">Não sabe qual atendimento procurar?</h3>
                 <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-700">
                   Explique a situação pelo WhatsApp para receber uma orientação inicial sobre o melhor caminho.
                 </p>
               </div>
-              <a href={infoWhatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-[#ffc0d8] px-5 py-3 text-sm font-bold text-slate-900 transition hover:bg-[#fff8c1] md:mt-0">
+              <a href={infoWhatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-[#ffc0d8] px-5 py-3 text-sm font-bold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:bg-[#fff8c1] md:mt-0">
                 Falar com Bárbara
                 <WhatsAppIcon className="h-4 w-4" />
               </a>
@@ -307,7 +340,7 @@ const Website = () => {
           </div>
         </section>
 
-        <section id="process" className="scroll-mt-24 bg-[#d0f4f4] py-16 md:py-24">
+        <section id="process" className="scroll-mt-24 bg-gradient-to-br from-[#d0f4f4] via-[#fdfdfd] to-[#fff8c1]/70 py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-4 md:px-6">
             <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:items-start">
               <div>
@@ -318,7 +351,7 @@ const Website = () => {
               </div>
               <div className="grid gap-4">
                 {processSteps.map((step, index) => (
-                  <div key={step.title} className="flex gap-4 rounded-lg bg-white p-5 shadow-sm">
+                  <div key={step.title} className="flex gap-4 rounded-lg border border-slate-900/8 bg-white/90 p-5 shadow-sm shadow-slate-900/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/8">
                     <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-[#ffc0d8] text-sm font-bold text-slate-900">
                       {index + 1}
                     </span>
@@ -333,7 +366,7 @@ const Website = () => {
           </div>
         </section>
 
-        <section className="bg-white py-16 md:py-24">
+        <section className="bg-gradient-to-b from-white to-[#fdfdfd] py-16 md:py-24">
           <div className="mx-auto max-w-5xl px-4 md:px-6">
             <div className="text-center">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-900">Dúvidas frequentes</p>
@@ -343,7 +376,7 @@ const Website = () => {
             </div>
             <div className="mt-10 grid gap-4 md:grid-cols-3">
               {faqs.map((faq) => (
-                <article key={faq.question} className="rounded-lg border border-slate-200 bg-white p-5">
+                <article key={faq.question} className="rounded-lg border border-slate-900/8 bg-white p-5 shadow-sm shadow-slate-900/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/8">
                   <h3 className="font-bold text-slate-900">{faq.question}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</p>
                 </article>
@@ -352,15 +385,15 @@ const Website = () => {
           </div>
         </section>
 
-        <section id="contact" className="scroll-mt-24 bg-[#ffc0d8] py-16 text-slate-900 md:py-20">
+        <section id="contact" className="scroll-mt-24 bg-gradient-to-br from-[#ffc0d8] via-[#fff8c1] to-[#d0f4f4] py-16 text-slate-900 md:py-20">
           <div className="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-[0.9fr_1.1fr] md:px-6 md:items-center">
-            <div>
+            <div className="rounded-lg border border-white/70 bg-white/70 p-6 shadow-2xl shadow-slate-900/10 backdrop-blur md:p-8">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-700">Contato</p>
               <h2 className="mt-3 text-3xl font-bold md:text-4xl">Agende uma avaliação ou tire suas dúvidas.</h2>
               <p className="mt-5 max-w-xl leading-8 text-slate-700">
                 Atendimento Clínico no Centro Médico Avançado - CMA, Rua 15 de Novembro, 232 - Dom Elizeu, Açu/RN, às terças (manhã e tarde), quartas e quintas (tarde).
               </p>
-              <a href={appointmentWhatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-[#fff8c1] px-6 py-3 text-sm font-bold text-slate-900 shadow-lg transition hover:bg-white md:text-base">
+              <a href={appointmentWhatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-[#ffc0d8] px-6 py-3 text-sm font-bold text-slate-900 shadow-lg transition hover:-translate-y-0.5 hover:bg-[#fff8c1] md:text-base">
                 Agendar no CMA
                 <WhatsAppIcon className="h-5 w-5" />
               </a>
@@ -390,7 +423,7 @@ const Website = () => {
 };
 
 const ServiceCard = ({ icon: Icon, title, description }) => (
-  <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+  <article className="rounded-lg border border-slate-900/8 bg-white p-6 shadow-sm shadow-slate-900/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/8">
     <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-[#d0f4f4] text-slate-900">
       <Icon className="h-6 w-6" />
     </div>
@@ -400,7 +433,7 @@ const ServiceCard = ({ icon: Icon, title, description }) => (
 );
 
 const ContactLink = ({ icon: Icon, title, href, text, external = false }) => (
-  <a href={href} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined} className="group flex gap-4 rounded-lg border border-slate-900/10 bg-white/60 p-5 transition hover:bg-white/80">
+  <a href={href} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined} className="group flex gap-4 rounded-lg border border-slate-900/8 bg-white/75 p-5 shadow-sm shadow-slate-900/5 backdrop-blur transition hover:-translate-y-1 hover:bg-white hover:shadow-xl hover:shadow-slate-900/8">
     <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-[#d0f4f4] text-slate-900">
       <Icon className="h-5 w-5" />
     </span>
