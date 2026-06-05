@@ -51,18 +51,18 @@ const highlights = [
 const aboutHighlights = [
   {
     icon: HeartHandshake,
-    title: "Olhar acolhedor",
-    description: "Intervenções respeitosas, construídas a partir da história e do ritmo de cada pessoa.",
+    title: "Intervenção terapêutica",
+    description: "Atendimento individualizado para compreender dificuldades e construir estratégias possíveis.",
   },
   {
     icon: Brain,
-    title: "Aprendizagem em fases",
+    title: "Todas as fases",
     description: "Acompanhamento para crianças, adolescentes, jovens, adultos e idosos.",
   },
   {
     icon: Sparkles,
-    title: "Potencialidades",
-    description: "Estratégias para fortalecer autonomia, habilidades cognitivas e aprendizagem significativa.",
+    title: "Estimulação cognitiva",
+    description: "Atividades para fortalecer funções cognitivas, autonomia e qualidade de vida.",
   },
 ];
 
@@ -273,26 +273,20 @@ const Website = () => {
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-900">Sobre a profissional</p>
               <h2 className="mt-3 text-3xl font-bold text-slate-900 md:text-4xl">
-                Cuidado técnico para entender como cada pessoa aprende.
+                Um olhar acolhedor para cada forma de aprender.
               </h2>
+              <p className="mt-5 rounded-lg border border-slate-900/8 bg-white/75 px-5 py-4 text-base font-semibold leading-7 text-slate-900 shadow-sm shadow-slate-900/5 backdrop-blur">
+                Acredito que todos têm potencialidades a desenvolver, no seu tempo e no seu ritmo.
+              </p>
               <div className="mt-6 space-y-4 text-base leading-8 text-slate-700">
                 <p>
-                  Sou Bárbara Medeiros, formada em Pedagogia e especialista em Psicopedagogia. Sou mãe atípica, mãe típica, mãe de coração, mãe de pet e psicopedagoga apaixonada pela minha profissão. Também sou filha e alguém que acredita profundamente que todos têm o seu melhor para oferecer.
+                  Sou Bárbara Medeiros, formada em Pedagogia e especialista em Psicopedagogia. Sou mãe atípica, mãe típica, mãe de coração, mãe de pet e psicopedagoga apaixonada pela minha profissão.
                 </p>
                 <p>
-                  Vejo a aprendizagem como um caminho possível para todos, em qualquer fase da vida, e acredito que aprender deve ser um processo leve, acolhedor e até prazeroso.
+                  Vejo a aprendizagem como um caminho possível em qualquer fase da vida. Por isso, desenvolvo intervenções terapêuticas com um olhar individualizado, acolhedor e respeitoso.
                 </p>
                 <p>
-                  Atuo na área da Psicopedagogia, desenvolvendo intervenções terapêuticas voltadas ao processo de aprendizagem, sempre com um olhar individualizado, acolhedor e respeitoso.
-                </p>
-                <p>
-                  Realizo atendimentos com crianças, adolescentes, jovens e adultos, auxiliando no desenvolvimento de habilidades cognitivas, acadêmicas, emocionais e funcionais relacionadas à aprendizagem em suas diferentes fases da vida.
-                </p>
-                <p>
-                  Também trabalho com estimulação cognitiva para idosos, promovendo atividades que contribuem para a manutenção e o fortalecimento das funções cognitivas, favorecendo a autonomia, a qualidade de vida e o envelhecimento saudável.
-                </p>
-                <p>
-                  Meu propósito é caminhar junto com cada pessoa, ajudando-a a reconhecer suas potencialidades e a construir caminhos para uma aprendizagem mais significativa, respeitando sua individualidade e seu ritmo de desenvolvimento.
+                  Atendo crianças, adolescentes, jovens e adultos, auxiliando no desenvolvimento de habilidades cognitivas, acadêmicas, emocionais e funcionais. Também trabalho com estimulação cognitiva para idosos, favorecendo autonomia, qualidade de vida e envelhecimento saudável.
                 </p>
               </div>
               <div className="mt-7 grid gap-3 sm:grid-cols-3">
