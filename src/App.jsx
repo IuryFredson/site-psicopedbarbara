@@ -264,7 +264,7 @@ const Website = () => {
                   Atuo na área da Psicopedagogia, desenvolvendo intervenções terapêuticas voltadas ao processo cognitivo de aprendizagem, sempre com um olhar individualizado e respeitoso.
                 </p>
                 <p>
-                  Realizo acompanhamentos tanto em consultório quanto na modalidade home care, atendendo crianças e adolescentes de forma clínica. Também trabalho com estimulação cognitiva para idosos, levando esse cuidado a cidades vizinhas por meio de ações específicas.
+                  Realizo acompanhamentos em consultório, atendendo crianças e adolescentes de forma clínica. Também trabalho com estimulação cognitiva para idosos, levando esse cuidado a cidades vizinhas por meio de ações específicas.
                 </p>
                 <p>
                   Meu propósito é caminhar junto com cada pessoa, ajudando-a a descobrir suas potencialidades e mostrando, na prática, que todos podem e merecem aprender todos os dias.
