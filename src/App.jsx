@@ -255,13 +255,19 @@ const Website = () => {
               </h2>
               <div className="mt-6 space-y-4 text-base leading-8 text-slate-700">
                 <p>
-                  Sou Bárbara Medeiros, graduada em Pedagogia pela Universidade Anhanguera e especialista em Psicopedagogia Clínica e Institucional pela Faculdade do Leste Mineiro.
+                  Sou Bárbara Medeiros, formada em Pedagogia e especialista em Psicopedagogia. Sou mãe atípica, mãe típica, mãe de coração, mãe de pet e psicopedagoga apaixonada pela minha profissão. Também sou filha e alguém que acredita profundamente que todos têm o seu melhor para oferecer.
                 </p>
                 <p>
-                  Atuo com avaliação, intervenção terapêutica, orientação vocacional, parecer psicopedagógico e estimulação cognitiva, sempre considerando a história, o ritmo e as necessidades de cada pessoa.
+                  Vejo a aprendizagem como um caminho possível para todos, em qualquer fase da vida, e acredito que aprender deve ser um processo leve, acolhedor e até prazeroso.
                 </p>
                 <p>
-                  O objetivo do atendimento é oferecer clareza sobre as dificuldades, construir estratégias possíveis e apoiar famílias, escolas e pacientes em decisões mais seguras.
+                  Atuo na área da Psicopedagogia, desenvolvendo intervenções terapêuticas voltadas ao processo cognitivo de aprendizagem, sempre com um olhar individualizado e respeitoso.
+                </p>
+                <p>
+                  Realizo acompanhamentos tanto em consultório quanto na modalidade home care, atendendo crianças e adolescentes de forma clínica. Também trabalho com estimulação cognitiva para idosos, levando esse cuidado a cidades vizinhas por meio de ações específicas.
+                </p>
+                <p>
+                  Meu propósito é caminhar junto com cada pessoa, ajudando-a a descobrir suas potencialidades e mostrando, na prática, que todos podem e merecem aprender todos os dias.
                 </p>
               </div>
             </div>
